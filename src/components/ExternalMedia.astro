@@ -1,0 +1,69 @@
+---
+interface Props {
+	src: string;
+}
+
+const { src } = Astro.props;
+const id = crypto.randomUUID();
+---
+
+<style lang="scss">
+	p,
+	noscript > p {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.external-consent {
+		margin-top: 1em;
+	}
+</style>
+
+<script>
+	let externalSources = document.querySelectorAll(".external-consent");
+	for (let i = 0; i < externalSources.length; i++) {
+		externalSources[i].addEventListener("click", consentClick);
+	}
+
+	function consentClick(this: HTMLElement) {
+		let container = this.parentElement!.parentElement!.parentElement!;
+
+		let assignedTemplate = document.querySelector(`template[data-content-id='${this.dataset.contentId}']`) as HTMLTemplateElement;
+		container.replaceWith(assignedTemplate.content);
+		assignedTemplate.remove();
+	}
+</script>
+
+<template data-content-id={id}>
+	<slot />
+</template>
+<div class="markdown-alert markdown-alert-warning">
+	<div class="markdown-alert-title">
+		<span class="markdown-alert-icon"></span>
+		Warning
+	</div>
+	<div class="markdown-alert-content">
+		<p>
+			This area contains externally hosted content.<br />
+			External sources may place cookies in your web browser and/or track you
+			in various ways.<br />
+			To prevent the external source from doing this, the content is blocked
+			until you explicitly allow this content to be shown.<br />
+			<code>{src}</code>
+			<button class="external-consent" data-content-id={id}>
+				Please show this external content
+			</button>
+		</p>
+		<noscript>
+			<style>
+				.external-consent {
+					display: none;
+				}
+			</style>
+			<p>External sources can only be shown with JavaScript enabled.</p>
+		</noscript>
+	</div>
+</div>

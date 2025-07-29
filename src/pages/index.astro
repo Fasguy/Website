@@ -1,0 +1,41 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!--
+This index page is not used for the time being.
+-->
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<p>
+				Welcome to my website!
+				<br />
+				Here you can find my various projects, ramblings and whatever else
+				I could put up here.
+			</p>
+			<ul>
+				<li>Check the posts page to find my various projects.</li>
+				<li>
+					Check the vault page to find direct download links and old
+					versions of various projects.
+				</li>
+				<li>
+					Check the about page to find out more about me and contact
+					methods/various platforms I'm on.
+				</li>
+			</ul>
+			<p>Tschüss! o/</p>
+		</main>
+		<Footer />
+	</body>
+</html>

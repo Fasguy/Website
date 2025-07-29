@@ -1,0 +1,123 @@
+---
+import Layout from "../layouts/ContentPage.astro";
+---
+
+<style lang="scss">
+	.x {
+		position: absolute;
+		color: transparent;
+		direction: ltr;
+	}
+	.k {
+		float: left;
+		direction: ltr;
+		top: -999px;
+		left: -999px;
+
+		&::after {
+			content: "\202e w+tca";
+			direction: rtl;
+		}
+	}
+	.r {
+		float: right;
+		direction: ltr;
+
+		&::after {
+			content: "y.net";
+			top: -999px;
+			left: -999px;
+		}
+	}
+	.r.k::after {
+		content: "me";
+	}
+	.r.k:not(.x) {
+		position: absolute;
+		color: transparent;
+	}
+	.rhombus {
+		display: inline-block;
+		user-select: none;
+
+		direction: rtl;
+		unicode-bidi: bidi-override;
+	}
+</style>
+<Layout
+	title="About Me"
+	description="Info about myself and contact methods"
+	pubDate={null!}
+	enableComments={false}
+>
+	<p>
+		Yo, waddup.
+		<br />
+		My name is Fabian, but online I mainly go by the name "Fasguy".
+	</p>
+
+	<p>
+		I'm a software developer by trade and work on different kinds of
+		projects privately. From the simplest tools to WebApps and mods.
+	</p>
+
+	<p>
+		My main areas of expertise are <code>C#</code> and
+		<code>HTML/CSS/JS</code>.
+		<br />
+		Occasionally I also work with <code>PHP</code>, <code>Java</code>,
+		<code>Lua</code>, <code>C++</code> (mainly Arduino) and others.
+	</p>
+
+	<p>
+		I've also worked with various Game Engines over the years.
+		<br />
+		<code>Unity</code> and <code>Godot</code> are the most notable examples,
+		with <code>Godot</code> being my current main interest.
+		<br />
+		Depending on how much the definition of "game engine" is stretched, I'd also
+		include <code>Garry's Mod</code> (or <code>Source Engine</code>, if you
+		want to be pedantic) on that list.
+	</p>
+
+	<p>
+		My most well known projects are probably my
+		<a href="/post/baldis-basics-mod-menu">Mod Menu for Baldi's Basics</a>
+		and my <a href="/post/minecraft-toolbox">Minecraft Toolbox</a>.
+	</p>
+
+	<p>
+		Apart from software development, I also occasionally dabble in different
+		areas entirely.
+		<br />
+		- I make some videos for YouTube, though nowadays that happens very rarely.
+		<br />
+		- Some of my earliest (still available) published projects are edits of official
+		Counter-Strike: Global Offensive maps to turn them into Hide & Seek maps.
+		<br />
+		- The urge to get properly into 3D modelling has been strong over the years.
+		<br />
+		<br />
+		In conclusion, I just like to try new things every now and then.
+	</p>
+
+	<h2 id="contact">Where to find me & contact methods</h2>
+
+	<p>
+		YouTube: <a href="https://youtube.com/@Fasguy">@Fasguy</a>
+		<br />
+		GitHub: <a href="https://github.com/Fasguy">@Fasguy</a>
+		<br />
+		BlueSky: <a href="https://bsky.app/profile/fasguy.net">@fasguy.net</a>
+		<br />
+		Steam: <a href="https://steamcommunity.com/id/fasguy">Fasguy</a>
+		<br />
+		GameBanana: <a href="https://gamebanana.com/members/1651913">Fasguy</a>
+		<br />
+		E-Mail: <span class="rhombus"
+			><span class="r">sgu<span class="r k">me</span></span>af@et<span
+				class="k x">cruton</span
+			>is<span class="x">william</span>be<span class="k">cont</span></span
+		>
+	</p>
+</Layout>

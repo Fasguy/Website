@@ -1,0 +1,33 @@
+---
+const today = new Date();
+---
+
+<footer>
+	&copy; {today.getFullYear()} Fasguy. All rights reserved.
+	<div class="social-links">
+		<a href="https://github.com/Fasguy" target="_blank">GitHub</a>
+		<a href="https://youtube.com/@Fasguy" target="_blank">YouTube</a>
+		<a href="https://bsky.app/profile/fasguy.net" target="_blank">BlueSky</a>
+		<a href="https://steamcommunity.com/id/fasguy/" target="_blank">Steam</a>
+	</div>
+</footer>
+<style>
+	footer {
+		padding: 2em 1em 3em 1em;
+		color: rgb(var(--gray));
+		text-align: center;
+	}
+	.social-links {
+		display: flex;
+		justify-content: center;
+		gap: 1em;
+		margin-top: 1em;
+	}
+	.social-links a {
+		text-decoration: none;
+		color: rgb(var(--gray));
+	}
+	.social-links a:hover {
+		color: rgb(var(--gray-dark));
+	}
+</style>
